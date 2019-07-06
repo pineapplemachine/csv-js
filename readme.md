@@ -1,6 +1,9 @@
 # @pinemach/csv
 
-[![MIT License][license-image]][license] [![Build Status][travis-image]][travis-url] [![NPM version][npm-version-image]][npm-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Build Status][travis-image]][travis-url]
+[![NPM version][npm-version-image]][npm-url]
+[![MIT License][license-image]][license]
 
 **@pinemach/csv** is a minimal, zero-dependency JavaScript package for writing
 and parsing CSV files pursuant to [RFC 4180](https://tools.ietf.org/html/rfc4180),
@@ -20,6 +23,9 @@ You can read the full API documentation at
 
 [npm-url]: https://www.npmjs.com/package/@pinemach/csv
 [npm-version-image]: https://badge.fury.io/js/%40pinemach%2Fcsv.svg
+
+[coverage-url]: https://coveralls.io/github/pineapplemachine/csv-js?branch=master
+[coverage-image]: https://coveralls.io/repos/github/pineapplemachine/csv-js/badge.svg?branch=master
 
 ## Installation
 
