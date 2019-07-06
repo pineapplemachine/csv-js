@@ -33,16 +33,18 @@
   "scripts": {
     "build": "./node_modules/.bin/tsc",
     "coverage": "nyc npm run test",
+    "coveralls": "nyc --reporter text-lcov npm run test | coveralls",
     "typedoc": "./node_modules/.bin/typedoc --mode file --theme minimal --out ./docs ./src",
     "test": "npm run build && node dist/test/test.js && node dist/test/basic-usage.js",
     "prepublish": "npm test"
   },
   "devDependencies": {
-    "@types/node": "^12.0.10",
+    "@types/node": "12.0.10",
     "canary-test": "1.1.2",
-    "nyc": "^14.1.1",
-    "source-map-support": "^0.5.12",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.5.2"
+    "coveralls": "3.0.4",
+    "nyc": "14.1.1",
+    "source-map-support": "0.5.12",
+    "typedoc": "0.14.2",
+    "typescript": "3.5.2"
   }
 }
