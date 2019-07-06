@@ -16,7 +16,7 @@ You can read the full API documentation at
 [**pineapplemachine.github.io/csv-js/**](https://pineapplemachine.github.io/csv-js/).
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
-[license]: https://github.com/pineapplemachine/strtime-js/blob/master/LICENSE
+[license]: https://github.com/pineapplemachine/csv-js/blob/master/LICENSE
 
 [travis-url]: https://travis-ci.org/pineapplemachine/csv-js
 [travis-image]: https://travis-ci.org/pineapplemachine/csv-js.svg?branch=master
