@@ -1,0 +1,19 @@
+{
+    "cache": false,
+    "exclude": [
+        "coverage",
+        "node_modules",
+        "docs"
+    ],
+    "extension": [
+        ".ts"
+    ],
+    "report-dir": "./coverage",
+    "temp-directory": "./coverage/.nyc_output",
+    "reporter": [
+        "cobertura",
+        "html",
+        "text",
+        "text-summary"
+    ]
+}
