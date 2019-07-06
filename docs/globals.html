@@ -984,10 +984,10 @@ img { max-width: 100%; }
 			<p>You can read the full API documentation at
 			<a href="https://pineapplemachine.github.io/csv-js/"><strong>pineapplemachine.github.io/csv-js/</strong></a>.</p>
 			<h2 id="installation">Installation</h2>
-			<p>You can install 4180 with the package manager of your choice. For example,</p>
-			<pre><code>npm install <span class="hljs-number">4180</span></code></pre><p>You can then import and use the module like so:</p>
-			<pre><code class="language-js"><span class="hljs-keyword">const</span> csv = <span class="hljs-built_in">require</span>(<span class="hljs-string">"4180"</span>); <span class="hljs-comment">// CommonJS</span></code></pre>
-			<pre><code class="language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> csv <span class="hljs-keyword">from</span> <span class="hljs-string">"4180"</span>; <span class="hljs-comment">// ES6 modules</span></code></pre>
+			<p>You can install this package with the package manager of your choice. For example,</p>
+			<pre><code><span class="hljs-built_in">npm</span> install @pinemach/csv</code></pre><p>You can then import and use the module like so:</p>
+			<pre><code class="language-js"><span class="hljs-keyword">const</span> csv = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@pinemach/csv"</span>); <span class="hljs-comment">// CommonJS</span></code></pre>
+			<pre><code class="language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> csv <span class="hljs-keyword">from</span> <span class="hljs-string">"@pinemach/csv"</span>; <span class="hljs-comment">// ES6 modules</span></code></pre>
 			<h2 id="configuration">Configuration</h2>
 			<p>When parsing or writing CSV data, the library accepts an options object,
 				either as the second argument to <strong>parse</strong>, <strong>write</strong>, or <strong>stream</strong>, or
@@ -1097,7 +1097,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Parser<wbr>Source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/parser.ts#L10">parser.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/parser.ts#L10">parser.ts:10</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1114,7 +1114,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Parser<wbr>Source<wbr>Parameter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Readable</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/parser.ts#L16">parser.ts:16</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/parser.ts#L16">parser.ts:16</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1130,7 +1130,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Row<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L60">common.ts:60</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L60">common.ts:60</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1145,7 +1145,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Rows<wbr>Iterable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#row" class="tsd-signature-type">Row</a><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L66">common.ts:66</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L66">common.ts:66</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1155,7 +1155,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Rows<wbr>Iterator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#row" class="tsd-signature-type">Row</a><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L72">common.ts:72</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L72">common.ts:72</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1178,7 +1178,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/parser.ts#L28">parser.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/parser.ts#L28">parser.ts:28</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1222,7 +1222,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/parser.ts#L42">parser.ts:42</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/parser.ts#L42">parser.ts:42</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1265,7 +1265,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/parser.ts#L56">parser.ts:56</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/parser.ts#L56">parser.ts:56</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1302,7 +1302,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/index.ts#L17">index.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/index.ts#L17">index.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1342,7 +1342,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/index.ts#L45">index.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/index.ts#L45">index.ts:45</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1385,7 +1385,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/index.ts#L30">index.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/index.ts#L30">index.ts:30</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1425,7 +1425,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 				<div class="tsd-signature tsd-kind-icon">Default<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L37">common.ts:37</a></li>
+						<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L37">common.ts:37</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1441,7 +1441,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<div class="tsd-signature tsd-kind-icon">newline<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L45">common.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L45">common.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1456,7 +1456,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<div class="tsd-signature tsd-kind-icon">quote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L49">common.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L49">common.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1471,7 +1471,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<div class="tsd-signature tsd-kind-icon">quote<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L54">common.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L54">common.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1487,7 +1487,7 @@ assert.deepEqual(parsedRows, data);</code></pre>
 					<div class="tsd-signature tsd-kind-icon">separator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;,&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/fdccec1/src/common.ts#L41">common.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/pineapplemachine/4180/blob/e44034a/src/common.ts#L41">common.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">

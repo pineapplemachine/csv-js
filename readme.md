@@ -23,20 +23,20 @@ You can read the full API documentation at
 
 ## Installation
 
-You can install 4180 with the package manager of your choice. For example,
+You can install this package with the package manager of your choice. For example,
 
 ```
-npm install 4180
+npm install @pinemach/csv
 ```
 
 You can then import and use the module like so:
 
 ``` js
-const csv = require("4180"); // CommonJS
+const csv = require("@pinemach/csv"); // CommonJS
 ```
 
 ``` js
-import * as csv from "4180"; // ES6 modules
+import * as csv from "@pinemach/csv"; // ES6 modules
 ```
 
 ## Configuration
