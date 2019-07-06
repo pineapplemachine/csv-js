@@ -6,9 +6,12 @@
     "csv",
     "comma",
     "separated",
+    "values",
     "data",
     "write",
     "parse",
+    "serialize",
+    "deserialize",
     "streams",
     "rfc",
     "4180"
