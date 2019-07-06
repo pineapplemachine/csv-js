@@ -3,7 +3,7 @@ import * as NodeStream from "stream";
 import {Options, Configurable} from "./common";
 
 /**
- * Any iterable or iterator which enumerates characters one at a time from
+ * Any iterator which enumerates characters one at a time from
  * some serialized CSV data source can be recognized and handled by a
  * {@link Parser} object.
  */
@@ -12,9 +12,12 @@ export type ParserSource = Iterator<string>;
 /**
  * Represents the source parameter types accepted by the {@link Parser}
  * constructor and its {@link Parser.parse} method.
+ * Specifically this means either a string, a NodeJS readable stream, or an
+ * iterable or iterable for enumerating the characters of a CSV data source
+ * one-by-one.
  */
 export type ParserSourceParameter = (
-    ParserSource | string | NodeStream.Readable
+    string | Iterator<string> | Iterable<string> | NodeStream.Readable
 );
 
 /**
@@ -154,7 +157,7 @@ export class Parser extends Configurable {
      * Assign an input serialized CSV data source to this Parser.
      * @param source The CSV data input. This can be a string,
      * a NodeJS readable stream, or any iterable or iterator which enumerates
-     * data one character at a time.
+     * serialized CSV data one character at a time.
      * @returns This instance, for easy chaining.
      */
     parse(source: ParserSourceParameter): this {
