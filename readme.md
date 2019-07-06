@@ -1,25 +1,25 @@
-# 4180
+# csv-4180
 
 [![MIT License][license-image]][license] [![Build Status][travis-image]][travis-url] [![NPM version][npm-version-image]][npm-url]
 
-4180 is a minimal, robust, zero-dependency JavaScript package for writing and
+**csv-4180** is a minimal, robust, zero-dependency JavaScript package for writing and
 parsing CSV files, pursuant to [RFC 4180](https://tools.ietf.org/html/rfc4180),
 written in [TypeScript](https://www.typescriptlang.org/).
 
-4180 natively supports parsing and writing string data either eagerly or lazily,
-as well as via [NodeJS streams](https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options).
+The csv-4180 package natively supports parsing and writing string data either
+eagerly or lazily, as well as via [NodeJS streams](https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options).
 
 You can read the full API documentation at
-[**pineapplemachine.github.io/4180/**](https://pineapplemachine.github.io/4180/).
+[**pineapplemachine.github.io/csv-4180/**](https://pineapplemachine.github.io/csv-4180/).
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
 [license]: https://github.com/pineapplemachine/strtime-js/blob/master/LICENSE
 
-[travis-url]: https://travis-ci.org/pineapplemachine/4180
-[travis-image]: https://travis-ci.org/pineapplemachine/4180.svg?branch=master
+[travis-url]: https://travis-ci.org/pineapplemachine/csv-4180
+[travis-image]: https://travis-ci.org/pineapplemachine/csv-4180.svg?branch=master
 
-[npm-url]: https://www.npmjs.com/package/4180
-[npm-version-image]: https://badge.fury.io/js/4180.svg
+[npm-url]: https://www.npmjs.com/package/csv-4180
+[npm-version-image]: https://badge.fury.io/js/csv-4180.svg
 
 ## Installation
 
