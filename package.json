@@ -1,7 +1,7 @@
 {
-  "name": "csv-4180",
+  "name": "@pinemach/csv",
   "version": "1.0.0",
-  "description": "Read and write CSV data pursuant to RFC csv-4180.",
+  "description": "Read and write CSV data pursuant to RFC 4180.",
   "keywords": [
     "csv",
     "comma",
@@ -11,9 +11,9 @@
     "parse",
     "streams",
     "rfc",
-    "csv-4180"
+    "4180"
   ],
-  "homepage": "https://github.com/pineapplemachine/csv-4180",
+  "homepage": "https://github.com/pineapplemachine/csv-js",
   "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -25,10 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pineapplemachine/csv-4180.git"
+    "url": "https://github.com/pineapplemachine/csv-js.git"
   },
   "bugs": {
-    "url": "https://github.com/pineapplemachine/csv-4180/issues"
+    "url": "https://github.com/pineapplemachine/csv-js/issues"
   },
   "scripts": {
     "build": "./node_modules/.bin/tsc",
