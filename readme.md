@@ -9,7 +9,8 @@ written in [TypeScript](https://www.typescriptlang.org/).
 4180 natively supports parsing and writing string data either eagerly or lazily,
 as well as via [NodeJS streams](https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options).
 
-You can read the full API documentation at [**docs/index.html**](docs/index.html).
+You can read the full API documentation at
+[**pineapplemachine.github.io/4180/**](https://pineapplemachine.github.io/4180/).
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
 [license]: https://github.com/pineapplemachine/strtime-js/blob/master/LICENSE
