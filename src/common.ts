@@ -40,7 +40,7 @@ export const DefaultOptions: Options = {
      */
     separator: ",",
     /**
-     * Default to CLRF row terminators.
+     * Default to CRLF row terminators.
      */
     newline: "\r\n",
     /**
