@@ -2,8 +2,8 @@
 
 [![MIT License][license-image]][license] [![Build Status][travis-image]][travis-url] [![NPM version][npm-version-image]][npm-url]
 
-**@pinemach/csv** is a minimal, robust, zero-dependency JavaScript package for writing and
-parsing CSV files, pursuant to [RFC 4180](https://tools.ietf.org/html/rfc4180),
+**@pinemach/csv** is a minimal, zero-dependency JavaScript package for writing
+and parsing CSV files pursuant to [RFC 4180](https://tools.ietf.org/html/rfc4180),
 written in [TypeScript](https://www.typescriptlang.org/).
 
 The @pinemach/csv package natively supports parsing and writing string data either
