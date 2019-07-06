@@ -9,11 +9,11 @@
 and parsing CSV files pursuant to [RFC 4180](https://tools.ietf.org/html/rfc4180),
 written in [TypeScript](https://www.typescriptlang.org/).
 
-The @pinemach/csv package natively supports parsing and writing string data either
+The **@pinemach/csv** package natively supports parsing and writing string data either
 eagerly or lazily, as well as via [NodeJS streams](https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options).
 
-You can read the full API documentation at
-[**pineapplemachine.github.io/csv-js/**](https://pineapplemachine.github.io/csv-js/).
+You can read the full API documentation at 
+**[pineapplemachine.github.io/csv-js/](https://pineapplemachine.github.io/csv-js/)**.
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
 [license]: https://github.com/pineapplemachine/csv-js/blob/master/LICENSE
