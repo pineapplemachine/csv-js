@@ -71,7 +71,7 @@ const myCsvWriter = new csv.Writer({
 const assert = require("assert").strict;
 const fs = require("fs");
 
-const csv = require("4180");
+const csv = require("@pinemach/csv");
 
 // My table containing very important data
 const data = [
