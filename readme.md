@@ -18,8 +18,8 @@ You can read the full API documentation at
 [travis-url]: https://travis-ci.org/pineapplemachine/csv-js
 [travis-image]: https://travis-ci.org/pineapplemachine/csv-js.svg?branch=master
 
-[npm-url]: https://www.npmjs.com/package/csv-js
-[npm-version-image]: https://badge.fury.io/js/csv-js.svg
+[npm-url]: https://www.npmjs.com/package/@pinemach/csv
+[npm-version-image]: https://badge.fury.io/js/%40pinemach%2Fcsv.svg
 
 ## Installation
 
