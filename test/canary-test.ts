@@ -7,7 +7,7 @@ import {Group as CanaryGroup} from "canary-test";
 
 import * as csv from "../src/index";
 
-export const canary = CanaryGroup("csvjs");
+export const canary = CanaryGroup("@pinemach/csv");
 export default canary;
 
 canary.test("Write empty CSV", async function() {

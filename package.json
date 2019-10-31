@@ -1,6 +1,6 @@
 {
   "name": "@pinemach/csv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Read and write CSV data pursuant to RFC 4180.",
   "keywords": [
     "csv",
@@ -34,7 +34,9 @@
     "url": "https://github.com/pineapplemachine/csv-js/issues"
   },
   "scripts": {
-    "build": "./node_modules/.bin/tsc",
+    "build": "npm run build-node && npm run build-web",
+    "build-web": "./node_modules/.bin/webpack",
+    "build-node": "./node_modules/.bin/tsc -p tsconfig.json",
     "coverage": "nyc npm run test",
     "coveralls": "nyc --reporter text-lcov npm run test | coveralls",
     "typedoc": "./node_modules/.bin/typedoc --mode file --theme minimal --out ./docs ./src",
@@ -47,7 +49,10 @@
     "coveralls": "3.0.4",
     "nyc": "14.1.1",
     "source-map-support": "0.5.12",
+    "ts-loader": "6.2.1",
     "typedoc": "0.14.2",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "webpack": "4.21.0",
+    "webpack-cli": "3.1.2"
   }
 }

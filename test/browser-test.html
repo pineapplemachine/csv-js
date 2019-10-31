@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>@pinemach/csv</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body onload="onBodyLoad()">
+        <script type="text/javascript" src="../dist/webpack-bundle.js"></script>
+        <script>
+            var data = [
+                ["Continent", "Country", "Capital"],
+                ["Africa", "Egypt", "Cairo"],
+                ["Africa", "Morocco", "Rabat"],
+                ["Asia", "China", "Beijing"],
+                ["Asia", "Japan", "Tokyo"],
+                ["Australia", "Australia", "Canberra"],
+                ["Europe", "Britian", "London"],
+                ["Europe", "Finland", "Helsinki"],
+                ["North America", "Cuba", "Havana"],
+                ["North America", "United States", "Washington"],
+                ["South America", "Brazil", "Brasilia"],
+                ["South America", "Ecuador", "Quito"],
+            ];
+            function onBodyLoad() {
+                console.log("Running test...");
+                console.log(csv);
+                const csvString = csv.write(data);
+                console.log(csvString);
+                document.body.innerText = csvString;
+            }
+        </script>
+    </body>
+</html>
