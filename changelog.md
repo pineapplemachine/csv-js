@@ -1,3 +1,9 @@
+# v1.0.3
+
+Fourth release. 14 March 2023.
+
+- Add WriterTransformNodeStream and Writer.streamTransform for better streaming support.
+
 # v1.0.2
 
 Third release. 31 October 2019.
