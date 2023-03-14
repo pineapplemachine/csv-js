@@ -35,9 +35,47 @@ export class WriterNodeStream extends NodeStream.Readable {
         const next = this.rows && this.rows.next();
         if(!this.writer || !next || next.done) {
             this.push(null);
-        }else {
+        }
+        else {
             this.push(this.writer.writeRow(next.value));
         }
+    }
+}
+
+/**
+ * Provides a NodeJS stream interface for serializing streamed row arrays as
+ * CSV data.
+ * Instances of this class are returned by the
+ * {@link Writer.streamTransform} method.
+ */
+export class WriterTransformNodeStream extends NodeStream.Transform {
+    // Use this Writer instance and its configuration.
+    writer: Writer;
+    
+    /**
+     * Construct a new WriterTransformNodeStream instance.
+     * @param writer - The {@link Writer} instance to use when serializing
+     * rows. If the argument isn't provided, then a Writer using the default
+     * configuration will be instantiated.
+     */
+    constructor(writer?: Writer, options?: NodeStream.TransformOptions) {
+        super(Object.assign({}, options, {
+            writableObjectMode: true,
+        }));
+        this.writer = writer || new Writer();
+    }
+    
+    /**
+     * Implements a NodeJS transform stream interface.
+     * @internal
+     */
+    _transform(
+        chunk: Row,
+        encoding: string,
+        callback: NodeStream.TransformCallback,
+    ): void {
+        this.push(this.writer.writeRow(chunk));
+        callback();
     }
 }
 
@@ -87,10 +125,12 @@ export class WriterCharacterIterator {
             // writer configuration but, just in case, handle it anyway.
             if(!this.buffer.length) {
                 return this.next();
-            }else {
+            }
+            else {
                 return {done: false, value: this.buffer[0]};
             }
-        }else {
+        }
+        else {
             return {done: false, value: this.buffer[this.index++]};
         }
     }
@@ -138,7 +178,8 @@ export class WriterRowIterator {
             // Value not being undefined is a workaround for
             // https://github.com/microsoft/TypeScript/issues/11375
             return {done: true, value: ""};
-        }else {
+        }
+        else {
             return {done: false, value: this.writer.writeRow(next.value)};
         }
     }
@@ -180,7 +221,8 @@ export class Writer extends Configurable {
             const next = rowIterator.next();
             if(next.done) {
                 break;
-            }else {
+            }
+            else {
                 data += this.writeRow(next.value);
             }
         }
@@ -198,6 +240,16 @@ export class Writer extends Configurable {
      */
     stream(rows: RowsIterable): WriterNodeStream {
         return new WriterNodeStream(rows, this);
+    }
+    
+    /**
+     * Construct and return a NodeJS stream which transforms rows, represented
+     * as iterables of strings, into a serialized CSV.
+     * @returns An object implementing the NodeJS transform stream interface,
+     * able to serialized piped rows in a stream instead of all at once.
+     */
+    streamTransform(): WriterTransformNodeStream {
+        return new WriterTransformNodeStream(this);
     }
     
     /**
@@ -233,7 +285,7 @@ export class Writer extends Configurable {
      * Columns are serialized to CSV data strings using the `String()` function.
      * @returns A CSV data string representing the serialized row.
      */
-    writeRow(row: Iterable<any>): string {
+    writeRow(row: Row): string {
         if(!row) {
             return this.newline;
         }
@@ -267,7 +319,8 @@ export class Writer extends Configurable {
             if(unescaped[i] === this.quote) {
                 escaped += this.quote + this.quote;
                 needsQuotes = true;
-            }else {
+            }
+            else {
                 escaped += unescaped[i];
                 if(
                     this.newline.indexOf(unescaped[i]) >= 0 ||

@@ -114,12 +114,14 @@ export class NodeStreamSource {
             this.eof = true;
             this.readable.resume(); // Unlock the stream
             return {done: true, value: ""};
+        }
         // Got a string - user code set stream encoding, like a boss.
-        }else if(typeof(data) === "string") {
+        else if(typeof(data) === "string") {
             this.buffer = data;
+        }
         // Got a buffer - do our best to not break, even though the user code
         // didn't set a stream encoding as it really should have done.
-        }else {
+        else {
             this.buffer = data.toString("utf8");
         }
         // Consume and return the first character in the chunk buffer newly
@@ -163,9 +165,11 @@ export class Parser extends Configurable {
     parse(source: ParserSourceParameter): this {
         if(isIterator(source)) {
             this.source = source;
-        }else if(typeof(source) === "string" || isIterable(source)) {
+        }
+        else if(typeof(source) === "string" || isIterable(source)) {
             this.source = (<any> source)[Symbol.iterator]();
-        }else if(isNodeStream(source)) {
+        }
+        else if(isNodeStream(source)) {
             this.source = new NodeStreamSource(<NodeStream.Readable> source);
         }
         return this;
@@ -185,7 +189,8 @@ export class Parser extends Configurable {
             const row = this.nextRow();
             if(row) {
                 rows.push(row);
-            }else {
+            }
+            else {
                 break;
             }
         }
@@ -234,7 +239,8 @@ export class Parser extends Configurable {
             if(next.done || !next.value) {
                 if(consumed === 0) {
                     return undefined;
-                }else {
+                }
+                else {
                     break;
                 }
             }
@@ -242,25 +248,32 @@ export class Parser extends Configurable {
             consumed++;
             if(quoted && ch === this.quote) {
                 quoted = false;
-            }else if(quoted) {
+            }
+            else if(quoted) {
                 column += ch;
-            }else if(last === this.quote && ch === this.quote) {
+            }
+            else if(last === this.quote && ch === this.quote) {
                 quoted = true;
                 column += this.quote;
-            }else if(ch === this.quote) {
+            }
+            else if(ch === this.quote) {
                 quoted = true;
-            }else if(ch === this.separator) {
+            }
+            else if(ch === this.separator) {
                 row.push(column);
                 column = "";
-            }else if(ch === "\n") {
+            }
+            else if(ch === "\n") {
                 if(last === "\r") {
                     column = column.slice(0, column.length - 1);
                     terminator = 2;
-                }else {
+                }
+                else {
                     terminator = 1;
                 }
                 break;
-            }else {
+            }
+            else {
                 column += ch;
             }
             last = ch;

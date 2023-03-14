@@ -2,6 +2,7 @@ require("source-map-support").install();
 
 import {strict as assert} from "assert";
 import * as fs from "fs";
+import * as NodeStream from "stream";
 
 import {Group as CanaryGroup} from "canary-test";
 
@@ -246,7 +247,7 @@ canary.test("Parse CSV and iterate rows", async function() {
 });
 
 canary.test("Write CSV to file stream", function() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         const path = __dirname + "/test-output.csv";
         const fileStream = fs.createWriteStream(path, "utf8");
         const writeStream = (new csv.Writer()).stream([
@@ -256,6 +257,40 @@ canary.test("Write CSV to file stream", function() {
         ]);
         writeStream.pipe(fileStream);
         writeStream.on("error", reject);
+        fileStream.on("error", reject);
+        fileStream.on("finish", () => {
+            fileStream.end();
+            console.log(path);
+            const data = fs.readFileSync(path, "utf8");
+            assert.equal(data, (
+                "One,Two,Three\r\n" +
+                "Four,Five,Six\r\n" +
+                "Seven,Eight,Nine\r\n"
+            ));
+            resolve();
+        });
+    });
+});
+
+canary.test("Write CSV to file stream via readable rows stream", function() {
+    return new Promise<void>((resolve, reject) => {
+        const path = __dirname + "/test-output-transform.csv";
+        const rows = [
+            ["One", "Two", "Three"],
+            ["Four", "Five", "Six"],
+            ["Seven", "Eight", "Nine"],
+        ];
+        // Set up streams: Read rows, transform to strings, and write to file.
+        const rowsStream = new NodeStream.Readable({objectMode: true});
+        const fileStream = fs.createWriteStream(path, "utf8");
+        const transformStream = (new csv.Writer()).streamTransform();
+        // Send data through the rowsStream readable stream
+        rowsStream.pipe(transformStream);
+        rows.forEach((row) => (rowsStream.push(row)));
+        rowsStream.push(null);
+        // Set up writing to file
+        transformStream.pipe(fileStream);
+        transformStream.on("error", reject);
         fileStream.on("error", reject);
         fileStream.on("finish", () => {
             fileStream.end();
@@ -271,7 +306,7 @@ canary.test("Write CSV to file stream", function() {
 });
 
 canary.test("Parse CSV from file stream", function() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         const path = __dirname + "/../../test/test.csv";
         const fileStream = fs.createReadStream(path, "utf8");
         fileStream.on("error", reject);
