@@ -16,6 +16,10 @@ module.exports = {
         library: "csv"
     },
     resolve: {
-        extensions: [".js", ".ts"]
+        extensions: [".js", ".ts"],
+        fallback: {
+            "buffer": false,
+            "stream": require.resolve("stream-browserify"),
+        }
     },
 };
