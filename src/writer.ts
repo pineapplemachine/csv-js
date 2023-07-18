@@ -74,7 +74,14 @@ export class WriterTransformNodeStream extends NodeStream.Transform {
         encoding: string,
         callback: NodeStream.TransformCallback,
     ): void {
-        this.push(this.writer.writeRow(chunk));
+        // Unhandled exceptions in _transform are otherwise fatal
+        // https://stackoverflow.com/a/40928431
+        try {
+            this.push(this.writer.writeRow(chunk));
+        }
+        catch(error) {
+            this.emit("error", error);
+        }
         callback();
     }
 }
