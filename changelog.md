@@ -1,3 +1,9 @@
+# v1.0.4
+
+Fifth release. 18 July 2023.
+
+- Improve error handling in WriterTransformNodeStream.
+
 # v1.0.3
 
 Fourth release. 14 March 2023.
